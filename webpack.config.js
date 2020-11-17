@@ -6,11 +6,10 @@ module.exports = {
   entry: './client/index.js',
   output: {
     path: __dirname + '/build',
-    publicPath: '/',
     filename: 'bundle.js',
   },
   devServer: {
-    contentBase: './build',
+    publicPath: '/build/',
   },
   module: {
     rules: [
@@ -23,7 +22,14 @@ module.exports = {
             presets: ["@babel/preset-env", "@babel/preset-react"],
           },
         }
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+        ],
+      },
     ]
   },
 }
