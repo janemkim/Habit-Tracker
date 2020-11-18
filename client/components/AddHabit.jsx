@@ -13,7 +13,7 @@ import React from 'react';
 import { addHabit } from '../actions/actions';
 
 const AddHabit = (props) => (
-  <div>
+  <div id="addHabitSpace">
     {/* <h4>Add New Habit</h4> */}
     {/* <label htmlFor="habitAdder">Add Habit: </label> */}
     <input name="habitAdder" id="habitAddInput"></input>

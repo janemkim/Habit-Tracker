@@ -25,14 +25,14 @@ class DateRow extends Component {
       date.setDate(date.getDate() - i);
       const newDate = (date.getMonth()+1)+'/'+date.getDate();
       arr.push(
-        <span className="date" key={newDate}> {newDate} </span>
+        <div className="date" key={newDate}> {newDate} </div>
       )
     }
     return (
       <div className="dateRow">
-        <span className="dateName">
+        <div className="dateName">
           Dates:
-        </span>
+        </div>
         {arr}
       </div>
     );

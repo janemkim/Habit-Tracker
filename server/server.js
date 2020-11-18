@@ -1,18 +1,17 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const habitController = require('./controllers/habitController');
 
-// uncomment the below for proxy challenge
-// const leaderList = [
-//   { name: "Anna", id: "a0" },
-//   { name: "Ben", id: "b0" },
-//   { name: "Clara", id: "c0" },
-//   { name: "David", id: "d0" },
-// ];
+const mongoose = require('mongoose');
+const uri = "mongodb+srv://janemkim:forHabitTrackerApp@habittracker.sll6o.mongodb.net/habittracker?retryWrites=true&w=majority";
+mongoose.connect(uri, {useNewUrlParser: true});
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('Connected to Database!');
+});
 
-// app.get("/api/leaders", (req, res) => {
-//   res.send(leaderList);
-// });
 
 if (process.env.NODE_ENV === "production") {
   // statically serve everything in the build folder on the route '/build'
@@ -23,4 +22,10 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+app.get("/", habitController.saveHabit, (req, res) => {
+  res.sendStatus(200);
+})
+
 app.listen(3000); //listens on port 3000 -> http://localhost:3000/
+
+module.exports = db;    

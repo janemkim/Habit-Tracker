@@ -3,6 +3,7 @@
   font-family: 'Amatic SC', cursive;
   margin: 0;
   padding: 0;
+  font-size: 18px;
   /* color: #393939; */
 }
 
@@ -15,6 +16,11 @@ h1 {
   margin: 0.5em;
 }
 
+h2 {
+  font-size: 25px;
+  margin-bottom: 0.5em;
+}
+
 div.container {
   margin: 1em;
   padding: 1em;
@@ -23,9 +29,43 @@ div.container {
   /* opacity: 0.5; */
 }
 
-.habitButton {
+.dateRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dateName {
+  width: 75px;
   padding: 5px;
+}
+
+.habitRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.habitName {
+  width: 75px;
+  padding: 5px;
+}
+
+.date {
+  width: 20px;
+  padding: 5px;
+}
+
+.habitButton {
+  text-align: center;
+  width: 20px;
+  padding-right: 5px;
+  padding-left: 5px;
+  /* padding: 5px; */
   margin: 5px;
+  font-size: 14px;
+}
+
+#addHabitSpace {
+  margin-top: 0.5em;
 }
 
 /* 

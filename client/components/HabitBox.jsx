@@ -16,13 +16,13 @@ const HabitBox = (props) => {
   const datesCompleted = props.datesCompleted;
   let habitID = props.habitID;
   let habitName = props.habitName;
-  let log = ' ';
+  let log = '  ';
   let date = props.date;
   let dateStr = date.toString();
   if (datesCompleted[dateStr] === true) {
-    log = 'X';
+    log = 'x';
   } else if (datesCompleted[dateStr] === false) {
-    log = ' ';
+    log = '  ';
   }
 
   return (
