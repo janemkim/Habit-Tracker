@@ -4,39 +4,49 @@
  * @module  HabitBox
  * @author
  * @date
- * @description stateful component that renders 
+ * @description presentation component that takes user input for new habit log
  *
  * ************************************
  */
 
-import React, { Component } from 'react';
-// import { addHabit } from '../actions/actions';
+import React from 'react';
+import { logHabit } from '../actions/actions';
 
-// const AddHabit = (props) => (
-//   // how do we create the circuit between the store and an input field?
-//   // how do we update the store from a presentation component?
-//   <div>
-//     {/* <h4>Add New Habit</h4> */}
-//     {/* <label htmlFor="habitAdder">Add Habit: </label> */}
-//     <input name="habitAdder" id="habitAddInput"></input>
-//     <button
-//       onClick={() => {
-//         props.addHabit(document.getElementById('habitAddInput').value);
-//       }}
-//     >
-//       Add Habit
-//     </button>
-//   </div>
-// );
-
-class HabitBox extends Component {
-  
-  render() {
-    return (
-      <button className="habitButton">hi</button>
-    );
+const HabitBox = (props) => {
+  const datesCompleted = props.datesCompleted;
+  let habitID = props.habitID;
+  let habitName = props.habitName;
+  let log = ' ';
+  let date = props.date;
+  let dateStr = date.toString();
+  if (datesCompleted[dateStr] === true) {
+    log = 'X';
+  } else if (datesCompleted[dateStr] === false) {
+    log = ' ';
   }
-}
+
+  return (
+    <button
+      className="habitButton"
+      onClick={() => {
+        props.logHabit({ index: {habitID}, date: {date} });
+        console.log('logging', habitName, 'for', date);
+      }}
+    >
+      {log}
+    </button>
+  );
+};
+
+
+// class HabitBox extends Component {
+  
+//   render() {
+//     return (
+//       <button className="habitButton">hi</button>
+//     );
+//   }
+// }
 
 // export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
 

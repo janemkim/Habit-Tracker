@@ -52,10 +52,12 @@ const Habits = (props) => {
   for (let i = 0; i < props.habitList.length; i+=1) {
     habits.push(
       <HabitRow
+        logHabit={props.logHabit}
         habitID={props.habitList[i].habitID}
         habitName={props.habitList[i].habitName}
         daysInARow={props.habitList[i].daysInARow}
         datesCompleted={props.habitList[i].datesCompleted}
+        // date={i}
         key={i}
       />
     )

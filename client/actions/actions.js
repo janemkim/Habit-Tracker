@@ -17,9 +17,9 @@ export const addHabit = (habitName) => ({
   payload: habitName,
 });
 
-export const logHabit = (habitDate) => ({
+export const logHabit = (habitlog) => ({
   type: types.LOG_HABIT,
-  payload: habitDate,
+  payload: habitlog,
 });
 
 // add more action creators

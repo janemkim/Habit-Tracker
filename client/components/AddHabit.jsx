@@ -13,8 +13,6 @@ import React from 'react';
 import { addHabit } from '../actions/actions';
 
 const AddHabit = (props) => (
-  // how do we create the circuit between the store and an input field?
-  // how do we update the store from a presentation component?
   <div>
     {/* <h4>Add New Habit</h4> */}
     {/* <label htmlFor="habitAdder">Add Habit: </label> */}

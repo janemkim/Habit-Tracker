@@ -37,6 +37,9 @@ const mapDispatchToProps = (dispatch) => ({
   addHabit: (habitName) => {
     dispatch(actions.addHabit(habitName));
   },
+  logHabit: (habitLog) => {
+    dispatch(actions.logHabit(habitLog));
+  }
 });
 
 class Board extends Component {
@@ -53,7 +56,7 @@ class Board extends Component {
           <Habits 
             totalHabits={this.props.totalHabits}
             habitList={this.props.habitList}
-            xorno={this.props.xorno}
+            logHabit={this.props.logHabit}
           />
           <AddHabit 
             addHabit={this.props.addHabit}

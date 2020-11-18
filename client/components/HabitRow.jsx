@@ -26,9 +26,17 @@ class HabitRow extends Component {
       const newDate = (date.getMonth()+1)+'/'+date.getDate();
       arr.push(
         <HabitBox 
-          key={newDate}
-          className="habitBox"
+          logHabit={this.props.logHabit}
+          habitID={this.props.habitID}
+          habitName={this.props.habitName}
+          daysInARow={this.props.daysInARow}
           datesCompleted={this.props.datesCompleted}
+
+          key={newDate}
+          date={newDate}
+          className="habitBox"
+          // datesCompleted={this.props.datesCompleted}
+          // logHabit={this.props.logHabit}
         />)
     }
     return (

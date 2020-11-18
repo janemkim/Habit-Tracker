@@ -48,7 +48,7 @@ const habitsReducers = (state = initialState, action) => {
           //want individual buttons here somehow
         };
 
-        // push the new market onto a copy of the market list
+        // push the new habit onto a copy of the habit list
         habitList = state.habitList.slice();
         habitList.push(newHabit);
 
@@ -64,6 +64,30 @@ const habitsReducers = (state = initialState, action) => {
       } else {
         return state;
       }
+
+    case types.LOG_HABIT:
+      const habitID = action.payload.index.habitID;
+      const date = action.payload.date.date;
+      const dateStr = date.toString();
+      habitList = state.habitList.slice();
+      // console.log(habitList);
+      if (!habitList[habitID - 10000 - 1].datesCompleted[dateStr]) {
+        habitList[habitID - 10000 - 1].datesCompleted[dateStr] = true;
+        return {
+          ...state,
+          habitList,
+        };
+      } else if (habitList[habitID - 10000 - 1].datesCompleted[dateStr] === true) {
+        habitList[habitID - 10000 - 1].datesCompleted[dateStr] = false;
+        return {
+          ...state,
+          habitList,
+        };
+      } else {
+        return state;
+      }
+
+    // props.logHabit({ index: {habitID}, date: {date} });
 
     // case types.SET_NEW_LOCATION:
     //   break;

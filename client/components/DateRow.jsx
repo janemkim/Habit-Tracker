@@ -10,7 +10,7 @@
  */
 
 import React, { Component } from 'react';
-import HabitBox from '../components/HabitBox.jsx';
+// import HabitBox from '../components/HabitBox.jsx';
 
 class DateRow extends Component {
   constructor(props) {

@@ -16,22 +16,21 @@ import style from './styles.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      xorno: "-",
-      // totalHabits: 0,
-      // // totalDays: 0,
-      // habitList: [],
-      // lastHabitID: 10000,
-      // newHabit: '',
-      // habitNames: { '': true },
-    }
+    // this.state = {
+    //   // xorno: "-",
+    //   // totalHabits: 0,
+    //   // // totalDays: 0,
+    //   // habitList: [],
+    //   // lastHabitID: 10000,
+    //   // newHabit: '',
+    //   // habitNames: { '': true },
+    // }
   }
 
   render() {
     return (
       <div>
         <Board 
-          xorno={this.state.xorno}
         />
       </div>
     );
