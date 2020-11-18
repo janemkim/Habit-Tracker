@@ -31,7 +31,7 @@ const habitsReducers = (state = initialState, action) => {
 
   switch (action.type) {
     case types.ADD_HABIT:
-      if (!habitNames.hasOwnProperty(action.payload.trim())) {
+      if (!habitNames.hasOwnProperty(action.payload)) {
         // increment lastHabitId and totalHabits counters
         lastHabitID += 1;
         totalHabits += 1;
@@ -44,6 +44,7 @@ const habitsReducers = (state = initialState, action) => {
           habitID: lastHabitID,
           habitName: action.payload,
           daysInARow: 0,
+          datesCompleted: {},
           //want individual buttons here somehow
         };
 

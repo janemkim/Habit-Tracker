@@ -17,10 +17,10 @@ export const addHabit = (habitName) => ({
   payload: habitName,
 });
 
-// export const logHabit = (location) => ({
-//   type: types.LOG_HABIT,
-//   payload: habitLog,
-// });
+export const logHabit = (habitDate) => ({
+  type: types.LOG_HABIT,
+  payload: habitDate,
+});
 
 // add more action creators
 // export const addMarket = (location) => ({

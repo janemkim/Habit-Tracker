@@ -23,6 +23,11 @@ div.container {
   /* opacity: 0.5; */
 }
 
+.habitButton {
+  padding: 5px;
+  margin: 5px;
+}
+
 /* 
 body {
   padding-top:10px;

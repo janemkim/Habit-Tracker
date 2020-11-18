@@ -11,7 +11,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import * as actions from '../actions/actions';
+import * as actions from '../actions/actions';
 // // import from child components...
 import Habits from '../components/Habits.jsx';
 import AddHabit from '../components/AddHabit.jsx';
@@ -29,12 +29,13 @@ import AddHabit from '../components/AddHabit.jsx';
 const mapStateToProps = (state) => ({
   // add pertinent state here
   totalHabits: state.habits.totalHabits,
+  habitList: state.habits.habitList,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   // increaseTotal: () => {dispatch({type: , payload:})},
-  addHabit: () => {
-    dispatch(actions.addHabit());
+  addHabit: (habitName) => {
+    dispatch(actions.addHabit(habitName));
   },
 });
 
@@ -42,6 +43,7 @@ class Board extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     return (
       <div className="container">
@@ -50,6 +52,7 @@ class Board extends Component {
           {/* Start adding components here... */}
           <Habits 
             totalHabits={this.props.totalHabits}
+            habitList={this.props.habitList}
             xorno={this.props.xorno}
           />
           <AddHabit 

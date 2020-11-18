@@ -30,13 +30,10 @@ import React, { Component } from 'react';
 // );
 
 class HabitBox extends Component {
-  constructor(props) {
-    super(props);
-  }
+  
   render() {
-    const {xorno} = this.props;
     return (
-      <button id="button">{xorno}</button>
+      <button className="habitButton">hi</button>
     );
   }
 }

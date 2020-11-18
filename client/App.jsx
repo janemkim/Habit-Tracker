@@ -18,15 +18,14 @@ class App extends Component {
     super(props);
     this.state = {
       xorno: "-",
-      totalHabits: 0,
-      // totalDays: 0,
-      habitList: [],
-      lastHabitID: 10000,
-      newHabit: '',
-      habitNames: { '': true },
+      // totalHabits: 0,
+      // // totalDays: 0,
+      // habitList: [],
+      // lastHabitID: 10000,
+      // newHabit: '',
+      // habitNames: { '': true },
     }
   }
-
 
   render() {
     return (

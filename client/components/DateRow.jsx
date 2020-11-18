@@ -1,7 +1,7 @@
 /**
  * ************************************
  *
- * @module  HabitRow
+ * @module  DateRow
  * @author
  * @date
  * @description stateful component that renders 
@@ -12,7 +12,7 @@
 import React, { Component } from 'react';
 import HabitBox from '../components/HabitBox.jsx';
 
-class HabitRow extends Component {
+class DateRow extends Component {
   constructor(props) {
     super(props);
   }
@@ -25,16 +25,13 @@ class HabitRow extends Component {
       date.setDate(date.getDate() - i);
       const newDate = (date.getMonth()+1)+'/'+date.getDate();
       arr.push(
-        <HabitBox 
-          key={newDate}
-          className="habitBox"
-          datesCompleted={this.props.datesCompleted}
-        />)
+        <span className="date" key={newDate}> {newDate} </span>
+      )
     }
     return (
-      <div className="habitRow">
-        <span className="habitName">
-          {this.props.habitName}: 
+      <div className="dateRow">
+        <span className="dateName">
+          Dates:
         </span>
         {arr}
       </div>
@@ -44,4 +41,4 @@ class HabitRow extends Component {
 
 // export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
 
-export default HabitRow;
+export default DateRow;

@@ -22,6 +22,7 @@ const AddHabit = (props) => (
     <button
       onClick={() => {
         props.addHabit(document.getElementById('habitAddInput').value);
+        console.log('adding', document.getElementById('habitAddInput').value);
       }}
     >
       Add Habit
