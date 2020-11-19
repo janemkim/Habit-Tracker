@@ -53,7 +53,7 @@ const habitsReducers = (state = initialState, action) => {
         habitList.push(newHabit);
 
         // return updated state
-        
+
         return {
           ...state,
           habitList,

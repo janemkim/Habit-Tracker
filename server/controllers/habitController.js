@@ -3,6 +3,8 @@ const Habit = require('../models/habitModel.js');
 const habitController = {};
 
 habitController.saveHabit = function(req,res,next) {
+  console.log(getState());
+
   Habit.create({
     personID: 'personid',
     totalHabits: 2,
